@@ -1,4 +1,6 @@
 #include <boost/atomic.hpp>
+#include <boost/thread/thread.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
 
 class spinlock
 {
@@ -28,6 +30,7 @@ int main()
 {
 	spinlock s;
 	s.lock();
-
+	boost::thread::sleep(boost::get_system_time() + boost::posix_time::seconds(5));
 	s.unlock();
+	boost::thread::sleep(boost::get_system_time() + boost::posix_time::seconds(5));
 }

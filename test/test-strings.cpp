@@ -5,7 +5,7 @@
 
 class test_strings : public ::testing::Test{
   protected:
-    string_test(){}
+    test_strings(){}
     virtual ~test_strings(){}
     virtual void SetUp(){
       puts("SetUp...");
@@ -21,7 +21,7 @@ TEST(test_strings,ends_with)
   std::string fileName = "liliang";
   std::string fix = "txt";
   std::vector<std::string> vct = {"li","liliang"};
-  ::snipts_util::JoinStrings(vct,",",&fix);
+  //::snipts_util::JoinStrings(vct,",",&fix);
   ASSERT_TRUE(::snipts_util::starts_with("liliang","li"));
   TearDown();
 }
